@@ -31,6 +31,16 @@ pipeline {
             }
         }
 
+        stage('Terminate Deployment') {
+            steps {
+                script {
+                    // This input step will pause the pipeline and wait for user input
+                    // before proceeding to the next stage.
+                    input "Do you want to terminate the deployment?"
+                }
+            }
+        }
+
         stage('Cleanup') {
             steps {
                 script {
