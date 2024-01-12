@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     tools {
-        nodejs '21.5.0'
+        nodejs 'nodejs'
     }
 
 
@@ -10,8 +10,7 @@ pipeline {
         stage('Install Packages') {
             steps {
                 script {
-                    sh 'npm install -g yarn'
-                    /* sh 'yarn install' */
+                    sh 'yarn install'
                 }
             }
         }
