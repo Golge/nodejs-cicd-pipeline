@@ -57,10 +57,10 @@ pipeline {
 
                 steps {
                     sh '''
-                        ssh -v -i $DEPLOY_SSH_KEY ubuntu@$PRODUCTION_IP_ADRESSS '
+                        ssh -v -i $DEPLOY_SSH_KEY ec2-user@$PRODUCTION_IP_ADRESSS '
                             
                             if [ ! -d "todos-app" ]; then
-                                git clone https://github.com/AhmadMazaal/todos-app.git todos-app
+                                git clone https://github.com/Golge/nodejs-cicd-pipeline.git todos-app
                                 cd todos-app
                             else
                                 cd todos-app
